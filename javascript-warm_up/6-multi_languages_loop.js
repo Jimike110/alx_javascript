@@ -9,6 +9,6 @@
 // You must use a loop (while, for, etc.)
 
 const string_array = ["C is fun", "Python is cool", "JavaScript is amazing"];
-for (let string in string_array) {
-    console.log(string + "\n");
+for (const string of string_array) {
+    console.log(string);
 }
