@@ -7,7 +7,7 @@
 // guillaume@ubuntu:~/$ ./100-main.js
 // 333
 
-const myVar = 333;
 exports.modify = function () {
+    let myVar = 333;
     return myVar;
 }
