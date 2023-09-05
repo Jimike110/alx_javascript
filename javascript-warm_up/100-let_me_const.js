@@ -8,7 +8,5 @@
 // 333
 
 exports.modify = function () {
-    let myVar = 333;
-    return myVar;
+    myVar = 333;
 }
-const myVar = 333;
