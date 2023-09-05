@@ -3,6 +3,6 @@
 // The name of the function must be add
 // You are not allowed to use var
 
-add = function () {
+exports.add = function (a, b) {
     return a + b;
 }
