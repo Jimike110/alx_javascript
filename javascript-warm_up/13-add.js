@@ -3,6 +3,6 @@
 // The name of the function must be add
 // You are not allowed to use var
 
-function add(a, b) {
+add = function () {
     return a + b;
 }
