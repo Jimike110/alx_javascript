@@ -11,3 +11,4 @@ exports.modify = function () {
     let myVar = 333;
     return myVar;
 }
+const myVar = 333;
