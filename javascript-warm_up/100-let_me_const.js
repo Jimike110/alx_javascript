@@ -7,6 +7,6 @@
 // guillaume@ubuntu:~/$ ./100-main.js
 // 333
 
-exports.modify = function () {
+module.exports.modify = function () {
     myVar = 333;
 }
