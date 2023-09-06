@@ -8,4 +8,4 @@ function callMeMoby (x, theFunction) {
         theFunction();
     }
 }
-module.exports = repeat;
+module.exports = callMeMoby;
