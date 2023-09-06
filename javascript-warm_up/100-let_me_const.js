@@ -7,8 +7,5 @@
 // guillaume@ubuntu:~/$ ./100-main.js
 // 333
 
-let myVar = 333;
-exports.setMyVar = function (value) {
-    myVar = value;
-}
-
+myVar = 333;
+module.exports = myVar;
