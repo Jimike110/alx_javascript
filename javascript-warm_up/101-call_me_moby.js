@@ -3,8 +3,9 @@
 // Prototype: function (x, theFunction)
 // You are not allowed to use var
 
-exports.call_me_moby = function (x, theFunction) {
+function repeat (x, theFunction) {
     for (let i = 0; i < x; i++) {
         theFunction();
     }
 }
+module.exports = repeat;
