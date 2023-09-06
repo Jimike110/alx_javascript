@@ -3,7 +3,7 @@
 // Prototype: function (x, theFunction)
 // You are not allowed to use var
 
-module.exports = function (x, theFunction) {
+exports.call_me_moby = function (x, theFunction) {
     for (let i = 0; i < x; i++) {
         theFunction();
     }
