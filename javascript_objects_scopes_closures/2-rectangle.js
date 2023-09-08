@@ -7,7 +7,8 @@ class Rectangle {
 }
 
 if (Rectangle.width <= 0 || Rectangle.height <= 0) {
-    Rectangle = {};
+    Rectangle.width = {};
+    Rectangle.height = {};
 }
 
 module.exports = Rectangle;
