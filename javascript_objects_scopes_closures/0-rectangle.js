@@ -2,7 +2,8 @@
 // You must use the class notation for defining your class
 
 class Rectangle {
-    constructor(Rectangle) {
-        this.Rectangle = Rectangle;
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
     }
 }
