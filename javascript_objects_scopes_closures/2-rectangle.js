@@ -1,14 +1,15 @@
 #!/usr/bin/node
 class Rectangle {
     constructor (w, h) {
-        this.width = w;
-        this.height = h;
-    }
+        if (w <= 0 || h <= 0) {
+            this.width = {};
+            this.height = {};
+        }
+        else {
+            this.width = w;
+            this.height = h;
+        }
 }
-
-if (Rectangle.width <= 0 || Rectangle.height <= 0) {
-    Rectangle.width = {};
-    Rectangle.height = {};
 }
 
 module.exports = Rectangle;
