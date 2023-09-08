@@ -7,3 +7,5 @@ class Rectangle {
         this.height = height;
     }
 }
+
+module.exports = Rectangle;
