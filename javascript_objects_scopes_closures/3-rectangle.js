@@ -11,7 +11,7 @@ class Rectangle {
   }
 }
 
-function print (w, h) {
+Rectangle.print = function (w, h) {
   for (let i = 0; i < h; i++) {
     process.stdout.write("X");
     for (let j = 0; j < w - 1; j++) {
@@ -20,8 +20,6 @@ function print (w, h) {
     console.log("");
   }
 };
-
-Object.apply(print, Rectangle);
 
 module.exports = Rectangle;
 
