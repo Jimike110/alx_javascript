@@ -1,19 +1,16 @@
 #!/usr/bin/node
+
 class Rectangle {
     constructor(w, h) {
-        if (w <= 0 || h <= 0 || typeof w !== 'number' || typeof h !== 'number') {
-            // If w or h is equal to 0 or not a positive integer, create an empty object
-            return new Rectangle();
-        }
-        else {
-            this.width = w;
-            this.height = h;
-        }
+      if (w <= 0 || h <= 0) {
+        return new Rectangle();
+      }
+      this.width = w;
+      this.height = h;
     }
-}
-
+  }
+  
 module.exports = Rectangle;
-
 
 // Write a class Rectangle that defines a rectangle:
 // You must use the class notation for defining your class
