@@ -5,10 +5,9 @@ const myObject = {
 };
 console.log(myObject);
 
-function incr (value) {
-    return myObject.value += 1;
+myObject.incr = function () {
+    this.value += 1;
 }
-Object.assign(incr, myObject);
 
 myObject.incr();
 console.log(myObject);
