@@ -10,11 +10,11 @@ class Rectangle {
     this.height = h;
     this.print = function () {
       for (let i = 0; i < h; i++) {
-        console.log("X");
+        console.log("X", end="");
         for (let j = 0; j < w - 1; j++) {
-          console.log("X");
+          console.log("X", end="");
         }
-        console.log("\n");
+        console.log("");
       }
     };
   }
