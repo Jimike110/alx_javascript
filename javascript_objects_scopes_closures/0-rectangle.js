@@ -2,10 +2,7 @@
 // You must use the class notation for defining your class
 
 class Rectangle {
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
-    }
+    
 }
 
 module.exports = Rectangle;
