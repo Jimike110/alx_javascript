@@ -11,7 +11,7 @@ class Rectangle {
   }
 }
 
-const print = function () {
+function print (w, h) {
   for (let i = 0; i < h; i++) {
     process.stdout.write("X");
     for (let j = 0; j < w - 1; j++) {
