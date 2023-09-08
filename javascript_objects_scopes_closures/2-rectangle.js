@@ -7,7 +7,7 @@ class Rectangle {
 }
 
 if (Rectangle.width <= 0 || Rectangle.height <= 0) {
-    Object.create({}, Rectangle);
+    Rectangle = {};
 }
 
 module.exports = Rectangle;
