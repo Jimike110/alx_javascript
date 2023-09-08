@@ -1,14 +1,15 @@
 #!/usr/bin/node
 
 class Rectangle {
-    constructor(w, h) {
-      if (arguments <= 0 || arguments == undefined || arguments == null) {
-        return;
+  constructor(w, h) {
+      if (w <= 0 || h <= 0 || isNaN(w) || isNaN(h)) {
+          // Check if w or h is less than or equal to 0, or if they are not valid numbers (NaN)
+          return;
       }
       this.width = w;
       this.height = h;
-    }
   }
+}
   
 module.exports = Rectangle;
 
