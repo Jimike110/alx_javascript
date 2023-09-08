@@ -21,7 +21,7 @@ const print = function () {
   }
 };
 
-Object.prototype(print, Rectangle);
+Object.apply(print, Rectangle);
 
 module.exports = Rectangle;
 
