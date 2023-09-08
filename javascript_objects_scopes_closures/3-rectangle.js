@@ -9,7 +9,7 @@ class Rectangle {
     this.width = w;
     this.height = h;
   }
-  print(w, h) {
+  print = function (w, h) {
     for (let i = 0; i < h; i++) {
       process.stdout.write("X");
       for (let j = 0; j < w - 1; j++) {
