@@ -5,11 +5,13 @@ class Rectangle {
       if (w <= 0 || h <= 0) {
         return new Rectangle();
       }
-      this.width = w;
-      this.height = h;
     }
   }
+ 
   
+  Rectangle.width = w;
+  Rectangle.height = h;
+
 module.exports = Rectangle;
 
 // Write a class Rectangle that defines a rectangle:
