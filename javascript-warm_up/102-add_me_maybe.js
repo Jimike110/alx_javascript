@@ -13,6 +13,6 @@
 // guillaume@ubuntu:~/$
 
 exports.addMeMaybe = function (number, theFunction) {
-    number = number + 1;
-    return theFunction();
+    number += 1;
+    return theFunction(number);
 }
