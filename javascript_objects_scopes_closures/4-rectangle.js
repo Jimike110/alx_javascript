@@ -20,7 +20,7 @@ class Rectangle {
     rotate() {
         this.width = this.height;
         this.height = this.width;
-        this.print();
+        // this.print();
     }
     double() {
         this.width * 2;
