@@ -5,12 +5,15 @@ class Rectangle {
             // If w or h is equal to 0 or not a positive integer, create an empty object
             this.width = undefined;
             this.height = undefined;
-            Rectangle = {};
+
         }
         else {
             this.width = w;
             this.height = h;
         }
+    }
+    toString() {
+        return `Rectangle {}`;
     }
 }
 
