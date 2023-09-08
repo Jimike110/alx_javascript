@@ -5,10 +5,11 @@ const myObject = {
 };
 console.log(myObject);
 
-const increment = function incr (value) {
+function incr (value) {
     return myObject.value += 1;
 }
-Object.create(myObject, increment);
+Object.assign(incr.prototype, myObject);
+
 myObject.incr();
 console.log(myObject);
 myObject.incr();
