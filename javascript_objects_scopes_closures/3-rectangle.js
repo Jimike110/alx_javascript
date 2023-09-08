@@ -8,17 +8,20 @@ class Rectangle {
     }
     this.width = w;
     this.height = h;
-    this.print = function () {
-      for (let i = 0; i < h; i++) {
-        process.stdout.write("X");
-        for (let j = 0; j < w - 1; j++) {
-            process.stdout.write("X");
-        }
-        console.log("");
-      }
-    };
   }
 }
+
+const print = function () {
+  for (let i = 0; i < h; i++) {
+    process.stdout.write("X");
+    for (let j = 0; j < w - 1; j++) {
+      process.stdout.write("X");
+    }
+    console.log("");
+  }
+};
+
+Object.prototype(print, Rectangle);
 
 module.exports = Rectangle;
 
