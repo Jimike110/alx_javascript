@@ -9,17 +9,16 @@ class Rectangle {
     this.width = w;
     this.height = h;
   }
-}
-
-Rectangle.print = function (w, h) {
-  for (let i = 0; i < h; i++) {
-    process.stdout.write("X");
-    for (let j = 0; j < w - 1; j++) {
+  print(w, h) {
+    for (let i = 0; i < h; i++) {
       process.stdout.write("X");
+      for (let j = 0; j < w - 1; j++) {
+        process.stdout.write("X");
+      }
+      console.log("");
     }
-    console.log("");
   }
-};
+}
 
 module.exports = Rectangle;
 
