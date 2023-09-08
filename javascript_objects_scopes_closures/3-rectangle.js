@@ -10,9 +10,9 @@ class Rectangle {
     this.height = h;
     this.print = function () {
       for (let i = 0; i < h; i++) {
-        console.log("X", end="");
+        process.stdout.write("X");
         for (let j = 0; j < w - 1; j++) {
-          console.log("X", end="");
+            process.stdout.write("X");
         }
         console.log("");
       }
