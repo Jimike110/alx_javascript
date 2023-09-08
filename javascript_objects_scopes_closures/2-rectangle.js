@@ -6,7 +6,7 @@ class Rectangle {
     }
 }
 
-if (w <= 0 || h <= 0) {
+if (Rectangle.width <= 0 || Rectangle.height <= 0) {
     Object.create({}, Rectangle);
 }
 
