@@ -1,30 +1,31 @@
 #!/usr/bin/node
 
 class Rectangle {
-    constructor(w, h) {
-        if (w <= 0 || h <= 0 || isNaN(w) || isNaN(h)) {
-            return;
-        }
-        this.width = w;
-        this.height = h;
+  constructor(w, h) {
+    if (w <= 0 || h <= 0 || isNaN(w) || isNaN(h)) {
+      return;
     }
-    rotate() {
-        this.width = this.height;
-        this.height = this.width + 1;
+    this.width = w;
+    this.height = h;
+  }
+  print() {
+    for (let i = 0; i < this.height; i++) {
+      process.stdout.write("X");
+      for (let j = 1; j < this.width; j++) {
+        process.stdout.write("X");
+      }
+      console.log("");
     }
-    double() {
-        this.width = this.width * 2;
-        this.height = this.height * 2;
-    }
-    print() {
-        for (let i = 0; i < this.height; i++) {
-            process.stdout.write("X");
-            for (let j = 1; j < this.width; j++) {
-                process.stdout.write("X");
-            }
-            console.log("");
-        }
-    }
+  }
+  rotate() {
+    const temp = this.width;
+    this.width = this.height;
+    this.height = temp;
+  }
+  double() {
+    this.width = this.width * 2;
+    this.height = this.height * 2;
+  }
 }
 
 module.exports = Rectangle;
