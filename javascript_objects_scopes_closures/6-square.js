@@ -6,7 +6,7 @@ class Square extends Square5 {
     charPrint(c) {
         if (c === undefined) {
             let c = "X";
-        } else {
+        } else if (typeof(c) === String) {
             for (let i = 0; i < this.size; i++) {
                 process.stdout.write(c);
                 for (let j = 1; j < this.size; j++) {
