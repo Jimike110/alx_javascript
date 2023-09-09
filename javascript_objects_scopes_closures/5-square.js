@@ -1,14 +1,13 @@
 #!/usr/bin/node
-import Rectangle from 4-rectangle
+import Rectangle from './4-rectangle.js'
 
 class Square extends Rectangle {
     constructor (size) {
-        super(w);
-        this.size = w;
+        super(size, size);
     }
 }
 
-module.exports = Rectangle, Square;
+module.exports = Square;
 
 // Write a class Square that defines a square and inherits from Rectangle of 4-rectangle.js:
 // You must use the class notation for defining your class and extends
