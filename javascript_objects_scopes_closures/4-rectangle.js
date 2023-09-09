@@ -8,6 +8,14 @@ class Rectangle {
         this.width = w;
         this.height = h;
     }
+    rotate() {
+        this.width = this.height;
+        this.height = this.width + 1;
+    }
+    double() {
+        this.width = this.width * 2;
+        this.height = this.height * 2;
+    }
     print() {
         for (let i = 0; i < this.height; i++) {
             process.stdout.write("X");
@@ -16,14 +24,6 @@ class Rectangle {
             }
             console.log("");
         }
-    }
-    rotate() {
-        this.width = this.height;
-        this.height = this.width + 1;
-    }
-    double() {
-        this.width = this.width * 2;
-        this.height = this.height * 2;
     }
 }
 
