@@ -6,14 +6,14 @@ class Square extends Square5 {
     charPrint(c) {
         if (c === undefined) {
             let c = "X";
-        } else { c = "c"}
-
-        for (let i = 0; i < this.size; i++) {
-            process.stdout.write(c);
-            for (let j = 1; j < this.size; j++) {
-                process.stdout.write(c)
+        } else {
+            for (let i = 0; i < this.size; i++) {
+                process.stdout.write(c);
+                for (let j = 1; j < this.size; j++) {
+                    process.stdout.write(c)
+                }
+                console.log("");
             }
-            console.log("");
         }
     }
 }
