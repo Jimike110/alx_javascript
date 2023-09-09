@@ -11,9 +11,9 @@ class Square extends Square5 {
         if (c === undefined) {
             c = "X";
         }
-        for (let i = 0; i < this.size; i++) {
+        for (let i = 0; i < this.height; i++) {
             process.stdout.write(c);
-            for (let j = 1; j < this.size; j++) {
+            for (let j = 1; j < this.width; j++) {
                 process.stdout.write(c)
             }
             console.log("");
