@@ -1,20 +1,18 @@
 #!/usr/bin/node
 
-const request = require('request');
+const status = require('.request');
 
-function status(url) {
-    return new Promise((resolve, reject) => {
-        request({ url }, function (error, response) {
-            if (error) {
-                reject(error); // Reject the promise if there's an error
-            } else {
-                resolve(response && response.statusCode); // Resolve with the status code if successful
-            }
-        });
-    });
+async function main(url) {
+    try {
+        const statusCode = await status({ url });
+        console.log('code:', statusCode);
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
 
-module.exports = status;
+main();
+
 
 // Write a script that display the status code of a GET request.
 // The first argument is the URL to request (GET)
