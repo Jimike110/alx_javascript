@@ -6,7 +6,7 @@ const request = require('request');
 const url = process.argv[2];
 
 // Construct the URL with the endpoint and the ID
-const id = 18;
+const id = '18';
 
 // Make a GET request to the URL
 request.get(url, (error, body) => {
@@ -16,11 +16,11 @@ request.get(url, (error, body) => {
   } else {
     // Otherwise, parse the body as JSON
     const data = body.body;
-    const characters = JSON.parse(data.characters);
-    // Print the title of the movie
+    const characters = data.characters;
+    
     let count = 0;
     for (let i = 0; i < characters.length; i++) {
-        if (id in i) {
+        if (characters[i].includes(id)) {
             count++;
         }
     }
