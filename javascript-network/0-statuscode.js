@@ -1,10 +1,16 @@
 #!/usr/bin/node
 
 const request = require('request');
-async function status (url) {
-    request({url}, function (error, response) {
-    console.error('error:', error); // Print the error if one occurred
-    console.log('code:', response && response.statusCode); // Print the response status code if a response was received
+
+function status(url) {
+    return new Promise((resolve, reject) => {
+        request({ url }, function (error, response) {
+            if (error) {
+                reject(error); // Reject the promise if there's an error
+            } else {
+                resolve(response && response.statusCode); // Resolve with the status code if successful
+            }
+        });
     });
 }
 
