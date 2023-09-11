@@ -19,7 +19,7 @@ request.get(url, (error, body) => {
     const data = body;
     console.log(typeof body);
     // Print the title of the movie
-    console.log(data.body);
+    console.log(data.body.title);
   }
 });
 
