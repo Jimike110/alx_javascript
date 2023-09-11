@@ -1,17 +1,21 @@
 #!/usr/bin/node
 
-const status = require('request');
+// Import the request module
+const request = require('request');
 
-async function main(url) {
-    try {
-        const statusCode = await status({ url });
-        console.log('code:', statusCode);
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
+// Get the URL from the first argument
+const url = process.argv[2];
 
-main();
+// Make a GET request to the URL
+request.get(url, (error, response) => {
+  // If there is an error, print it
+  if (error) {
+    console.error(error);
+  } else {
+    // Otherwise, print the status code like this: code: <status code>
+    console.log(`code: ${response.statusCode}`);
+  }
+});
 
 
 // Write a script that display the status code of a GET request.
