@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const status = require('.request');
+const status = require('request');
 
 async function main(url) {
     try {
