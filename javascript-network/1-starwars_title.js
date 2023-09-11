@@ -17,6 +17,7 @@ request.get(url, (error, body) => {
   } else {
     // Otherwise, parse the body as JSON
     const data = body;
+    console.log(typeof body);
     // Print the title of the movie
     console.log(data.title);
   }
