@@ -15,7 +15,7 @@ request.get(url, (error, body) => {
     console.error(error);
   } else {
     // Otherwise, parse the body as JSON
-    const data = body.body;
+    const data = JSON.parse(body.body);
     const characters = data.characters;
     
     let count = 0;
