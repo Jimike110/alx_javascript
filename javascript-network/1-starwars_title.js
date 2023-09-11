@@ -1,19 +1,26 @@
 #!/usr/bin/node
 
 // Import the request module
-const request = require("request");
+const request = require('request');
 
-// Get the URL from the first argument
+// Get the movie ID from the first argument
 const id = process.argv[2];
 
-const requestURL = `https://swapi-api.alx-tools.com/api/films/${id}`;
-const request = new Request(requestURL);
+// Construct the URL with the endpoint and the ID
+const url = `https://swapi-api.alx-tools.com/api/films/${id}`;
 
-const response = await fetch(request);
-const movieText = await response.text();
-
-const movie = JSON.parse(movieText);
-console.log(movie.title);
+// Make a GET request to the URL
+request.get(url, (error, body) => {
+  // If there is an error, print it
+  if (error) {
+    console.error(error);
+  } else {
+    // Otherwise, parse the body as JSON
+    const data = JSON.parse(body);
+    // Print the title of the movie
+    console.log(data.title);
+  }
+});
 
 // Write a script that prints the title of a Star Wars movie where the episode number matches a given integer.
 // The first argument is the movie ID
