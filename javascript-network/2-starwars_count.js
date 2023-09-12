@@ -1,12 +1,12 @@
 #!/usr/bin/node
 
-const request = require('request');
+const request = require("request");
 
 // Get the movie ID from the first argument
 const url = process.argv[2];
 
 // Construct the URL with the endpoint and the ID
-const id = '18';
+const id = "18";
 
 // Make a GET request to the URL
 request.get(url, (error, body) => {
@@ -16,16 +16,27 @@ request.get(url, (error, body) => {
   } else {
     // Otherwise, parse the body as JSON
     const data = body.body;
-    // const characters = data.characters;
-    
-    // let count = 0;
-    // for (let i = 0; i < characters.length; i++) {
-    //     if (characters[i].includes(id)) {
-    //         count++;
-    //     }
-    // }
-    // console.log(count);
-    console.log(data);
+
+    // Initialize the count variable
+    let count = 0;
+
+    // Loop through the data array
+    for (let i = 0; i < data.length; i++) {
+      // Get the characters array of the current movie
+      const characters = data[i].characters;
+
+      // Loop through the characters array
+      for (let j = 0; j < characters.length; j++) {
+        // Check if the character ID is 18
+        if (characters[j].includes(id)) {
+          // Increment the count variable
+          count++;
+        }
+      }
+    }
+
+    // Print the count variable
+    console.log(count);
   }
 });
 
