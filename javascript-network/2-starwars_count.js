@@ -16,15 +16,15 @@ request.get(url, (error, body) => {
   } else {
     // Otherwise, parse the body as JSON
     const data = body.body;
-    const characters = data.characters;
+    // const characters = data.characters;
     
-    let count = 0;
-    for (let i = 0; i < characters.length; i++) {
-        if (characters[i].includes(id)) {
-            count++;
-        }
-    }
-    console.log(count);
+    // let count = 0;
+    // for (let i = 0; i < characters.length; i++) {
+    //     if (characters[i].includes(id)) {
+    //         count++;
+    //     }
+    // }
+    // console.log(count);
     console.log(data);
   }
 });
