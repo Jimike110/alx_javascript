@@ -24,7 +24,8 @@ request.get(url, (error, body) => {
     for (let i = 0; i < data.length; i++) {
       // Get the characters array of the current movie
       const characters = data[i].characters;
-
+      console.log(characters);
+      
       // Loop through the characters array
       for (let j = 0; j < characters.length; j++) {
         // Check if the character ID is 18
