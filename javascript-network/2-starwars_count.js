@@ -24,7 +24,7 @@ request(api_url, (error, response, body) => {
   // Loop through the results of the data
   for (let result of data.results) {
     // Check if the character ID is in the list of characters for each movie
-    if (result.characters.includes(String(character_id))) {
+    if (result.characters.some((url) => url.endsWith(`${character_id}/`))) {
       // Increment the movie count by one
       movie_count++;
     }
