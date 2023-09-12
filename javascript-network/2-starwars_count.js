@@ -25,6 +25,7 @@ request.get(url, (error, body) => {
         }
     }
     console.log(count);
+    console.log(data);
   }
 });
 
