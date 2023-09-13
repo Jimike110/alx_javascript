@@ -30,9 +30,9 @@ request(api_url, (error, response, body) => {
     const completed = user.completed;
 
     // If the user id is not in the object, initialize it with zero
-    if (!completed_tasks[user_id]) {
-      completed_tasks[user_id] = 0;
-    }
+    // if (!completed_tasks[user_id]) {
+    //   completed_tasks[user_id] = 0;
+    // }
 
     // If the task is completed, increment the count by one
     if (completed) {
