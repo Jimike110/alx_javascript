@@ -27,8 +27,5 @@ request(url, (error, response, body) => {
       console.error(error);
       return;
     }
-
-    // Print a success message
-    console.log("Webpage saved!");
   });
 });
