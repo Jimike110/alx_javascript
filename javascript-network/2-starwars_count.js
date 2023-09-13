@@ -1,10 +1,13 @@
+#!/usr/bin/node
+
 // Import the request module
 const request = require("request");
 
-// Get the API URL from the argument
+// Define the API URL and the character ID
 const api_url = process.argv[2];
+const character_id = 18;
 
-// Use the request function to get the data from the API
+// Use the request function to get the response from the API as a JSON object
 request(api_url, (error, response, body) => {
   // Check for errors
   if (error) {
@@ -12,31 +15,23 @@ request(api_url, (error, response, body) => {
     return;
   }
 
-  // Parse the body as a JSON array
+  // Parse the body as a JSON object
   const data = JSON.parse(body);
 
-  // Initialize an empty object to store the completed tasks by user id
-  const completed_tasks = {};
+  // Initialize a counter for the number of movies
+  let movie_count = 0;
 
-  // Loop through each element of the data array
-  data.forEach((user) => {
-    // Get the user id and the completed status
-    const user_id = user.userId;
-    const completed = user.completed;
-
-    // If the user id is not in the object, initialize it with zero
-    if (!completed_tasks[user_id]) {
-      completed_tasks[user_id] = 0;
+  // Loop through the results of the data
+  for (let result of data.results) {
+    // Check if the character ID is in the list of characters for each movie
+    if (result.characters.some((url) => url.endsWith(`${character_id}/`))) {
+      // Increment the movie count by one
+      movie_count++;
     }
+  }
 
-    // If the task is completed, increment the count by one
-    if (completed) {
-      completed_tasks[user_id]++;
-    }
-  });
-
-  // Print the completed tasks object
-  console.log(completed_tasks);
+  // Print the movie count
+  console.log(movie_count);
 });
 
 // Write a script that prints the number of movies where the character “Wedge Antilles” is present.

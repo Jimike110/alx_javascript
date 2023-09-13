@@ -3,30 +3,43 @@
 // Only print users with completed task
 // You must use the module request
 
+// Import the request module
 const request = require("request");
 
+// Get the API URL from the argument
 const api_url = process.argv[2];
 
+// Use the request function to get the data from the API
 request(api_url, (error, response, body) => {
-    if (error) {
-        console.log("An error occured: ", error);
+  // Check for errors
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  // Parse the body as a JSON array
+  const data = JSON.parse(body);
+
+  // Initialize an empty object to store the completed tasks by user id
+  const completed_tasks = {};
+
+  // Loop through each element of the data array
+  data.forEach((user) => {
+    // Get the user id and the completed status
+    const user_id = user.userId;
+    const completed = user.completed;
+
+    // If the user id is not in the object, initialize it with zero
+    if (!completed_tasks[user_id]) {
+      completed_tasks[user_id] = 0;
     }
-    const data = JSON.parse(body);
 
-    let user = data[i];
+    // If the task is completed, increment the count by one
+    if (completed) {
+      completed_tasks[user_id]++;
+    }
+  });
 
-    data.forEach(user => {
-        let completed_tasks = 0;
-        if (user.userId === 1 && user.completed === true) {
-            completed_tasks++;
-        }
-        user.userId++;
-    });
-    let output = JSON.stringify(user.userId, completed_tasks);
-    console.log(output);
-    // for (let i = 0; i < data.length; i++) {
-    //     if (i.completed === true) {
-    //         completed_tasks++;
-    //     }
-    // }
+  // Print the completed tasks object
+  console.log(completed_tasks);
 });
