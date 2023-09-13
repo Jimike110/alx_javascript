@@ -13,6 +13,7 @@ request(api_url, (error, response, body) => {
     }
     const data = JSON.parse(body);
 
+    let user = data[i];
 
     data.forEach(user => {
         let completed_tasks = 0;
@@ -21,7 +22,7 @@ request(api_url, (error, response, body) => {
         }
         user.userId++;
     });
-    let output = JSON.stringify(user, completed_tasks);
+    let output = JSON.stringify(user.userId, completed_tasks);
     console.log(output);
     // for (let i = 0; i < data.length; i++) {
     //     if (i.completed === true) {
