@@ -5,9 +5,9 @@
 
 const request = require("request");
 
-const api_url = "https://jsonplaceholder.typicode.com/todos";
+const api_url = process.argv[2];
 
-request(api_url, (error, response, body) {
+request(api_url, (error, response, body) => {
     if (error) {
         console.log("An error occured: ", error);
     }
