@@ -41,11 +41,11 @@ request(api_url, (error, response, body) => {
   });
 
   // Check if the object is empty
-  if (Object.keys(completed_tasks).length === 0) {
-    // Print an empty object
-    console.log({});
-  } else {
+  // if (Object.keys(completed_tasks).length === 0) {
+  //   // Print an empty object
+  //   console.log({});
+  // } else {
     // Print the completed tasks object
     console.log(completed_tasks);
-  }
+  // }
 });
