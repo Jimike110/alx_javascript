@@ -1,6 +1,6 @@
 // Write a script that computes the number of tasks completed by user id.
 // The first argument is the API URL: https://jsonplaceholder.typicode.com/todos
-// Only print users with completed task
+// Only print users with completed tasks
 // You must use the module request
 
 // Import the request module
@@ -24,10 +24,10 @@ request(api_url, (error, response, body) => {
   const completed_tasks = {};
 
   // Loop through each element of the data array
-  data.forEach((user) => {
+  data.forEach((task) => {
     // Get the user id and the completed status
-    const user_id = user.userId;
-    const completed = user.completed;
+    const user_id = task.userId;
+    const completed = task.completed;
 
     // If the user id is not in the object, initialize it with zero
     // if (!completed_tasks[user_id]) {
@@ -40,12 +40,17 @@ request(api_url, (error, response, body) => {
     }
   });
 
-  // Check if the object is empty
-  if (Object.keys(completed_tasks).length === 0) {
-    // Print an empty object
-    console.log({});
-  } else {
-    // Print the completed tasks object
-    console.log(completed_tasks);
-  }
+  // Filter out users with no completed tasks
+  const usersWithCompletedTasks = Object.keys(completed_tasks).reduce(
+    (acc, userId) => {
+      if (completed_tasks[userId] > 0) {
+        acc[userId] = completed_tasks[userId];
+      }
+      return acc;
+    },
+    {}
+  );
+
+  // Print the completed tasks object
+  console.log(usersWithCompletedTasks);
 });
