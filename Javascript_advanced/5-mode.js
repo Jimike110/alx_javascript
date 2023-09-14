@@ -23,9 +23,9 @@ function changeMode(size=Number, weight=String, transform=String, background=Str
 }
 
 function main() {
-    var spooky = changeMode('9px', 'bold', 'uppercase', 'pink', 'green');
-    var darkMode = changeMode('12px', 'bold', 'capitalize', 'black', 'white');
-    var screamMode = changeMode('12px', 'normal', 'lowercase', 'white', 'black');
+    var spooky = changeMode('9', 'bold', 'uppercase', 'pink', 'green');
+    var darkMode = changeMode('12', 'bold', 'capitalize', 'black', 'white');
+    var screamMode = changeMode('12', 'normal', 'lowercase', 'white', 'black');
 
     let paragraph = document.createElement("p");
     paragraph.textContent = "Welcome Holberton";
