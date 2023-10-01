@@ -3,17 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookies & Local Storage</title>
+    <title>Cookies and Local Storage</title>
 </head>
 <body>
     <input type="text" id="firstname">
-    <input type="email" id="email">
-    <button>Log me in</button>
-    <button>Show me the cookies</button>
+    <input type="text" id="email">
+    <button onclick="setCookies()">Log me in</button>
+    <button onclick="showCookies()">Show the cookies</button>
+
     <script type="text/javascript">
         function setCookies() {
+            // Get the values from the input fields
+            var firstnameValue = document.getElementById("firstname").value;
+            var emailValue = document.getElementById("email").value;
+
+            // Set cookies with proper formatting
+            document.cookie = "firstname=" + firstnameValue;
+            document.cookie = "email=" + emailValue;
+        }
+
+        function showCookies() {
+            // Get the value of the "firstname" cookie
+            var firstnameCookie = getCookie("firstname");
             
+            // Get the value of the "email" cookie
+            var emailCookie = getCookie("email");
+
+            // Create a paragraph element
+            var para = document.createElement("p");
+
+            // Set the inner HTML of the paragraph
+            para.innerHTML = "Cookies:<br>Firstname: " + firstnameCookie + "<br>Email: " + emailCookie;
+
+            // Append the paragraph to the body
+            document.body.appendChild(para);
+        }
+
+        // Function to get a specific cookie by name
+        function getCookie(name) {
+            var cookieName = name + "=";
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.indexOf(cookieName) === 0) {
+                    return cookie.substring(cookieName.length, cookie.length);
+                }
+            }
+            return "";
         }
     </script>
 </body>
 </html>
+
+<!-- In a file 0-index.html, create a basic html template:
+    Add two text inputs, with the id firstname and email
+    Add one button with the text “Log me in” that will call the function setCookies
+    Add one button with the text “Show the cookies” that will call the function showCookies
+Create a function setCookies:
+    It should set the cookie firstname with the value in the firstname input
+    It should set the cookie email with the value in the email input
+Create a function showCookies:
+    It should create a DOM element p
+    It should set the inner html with Cookies: and the value of the cookie
+    It should append the paragraph at the bottom of the page -->
